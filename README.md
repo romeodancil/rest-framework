@@ -1,4 +1,4 @@
-# rest-framework
+# django-rest-framework-react-boilerplate
 
 #### Install Django
 ###### pip install django
