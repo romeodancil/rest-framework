@@ -1,5 +1,4 @@
 from rest_framework.generics import ListAPIView, RetrieveAPIView
-
 from api.models import SampleApi
 from api.serializers import SampleApiSerializers
 

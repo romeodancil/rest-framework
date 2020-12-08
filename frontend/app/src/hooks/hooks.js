@@ -5,7 +5,7 @@ export function useLocalState(localItem) {
 
 	const setLoc = useCallback((newItem) => {
 		if (newItem) {
-			localStorage.setItem(localItem, newItem)
+			localStorage.setItem(localItem, JSON.stringify(newItem))
 			setState(newItem)
 		} else {
 			localStorage.removeItem(localItem)

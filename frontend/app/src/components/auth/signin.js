@@ -1,12 +1,17 @@
 import React from 'react'
 import App from '../../App'
 import { useForm } from 'react-hook-form'
+import { login } from '../../actions/auth'
+import { useLocalState } from '../../hooks/hooks'
 
 function Signin() {
 	const {register, handleSubmit, errors} = useForm()
+	const [token, setToken] = useLocalState('token')
 
 	const onSubmit = (formData) => {
-		console.log('formData', formData)
+		login(formData, (data) => {
+			setToken(data)
+		}, () => {})
 	}
 
 	return (
@@ -15,7 +20,7 @@ function Signin() {
 				<label htmlFor="username">Username</label>
 				<input ref={register} type="text" name="username"/>
 				<label htmlFor="username">Password</label>
-				<input ref={register} type="text" name="password"/>
+				<input ref={register} type="password" name="password"/>
 				<button type="submit">Login</button>
 			</form>
 		</div>
