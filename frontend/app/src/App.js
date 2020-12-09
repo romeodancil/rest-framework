@@ -7,7 +7,7 @@ import { useHistory } from 'react-router-dom'
 function App({children}) {
 	const [token, setToken] = useLocalState('token')
 	const history = useHistory()
-	console.log('token', token)
+	
 	if (!token) {
 		history.push('/signin')
 	}

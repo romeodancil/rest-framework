@@ -3,6 +3,7 @@ import App from '../../App'
 import { useForm } from 'react-hook-form'
 import { login } from '../../actions/auth'
 import { useLocalState } from '../../hooks/hooks'
+import { Link } from 'react-router-dom'
 
 function Signin() {
 	const {register, handleSubmit, errors} = useForm()
@@ -19,9 +20,32 @@ function Signin() {
 			<form onSubmit={handleSubmit(onSubmit)}>
 				<label htmlFor="username">Username</label>
 				<input ref={register} type="text" name="username"/>
-				<label htmlFor="username">Password</label>
+				<label htmlFor="password">Password</label>
 				<input ref={register} type="password" name="password"/>
 				<button type="submit">Login</button>
+				<div>
+					<Link to={
+								{
+									pathname: "/register",
+									state: {
+										from: "Register"
+									}
+								}
+						}>
+						Register
+					</Link>
+					&nbsp;|&nbsp;
+					<Link to={
+								{
+									pathname: "#",
+									state: {
+										from: "Register"
+									}
+								}
+						}>
+						Forgot Password
+					</Link>
+				</div>
 			</form>
 		</div>
 	)
