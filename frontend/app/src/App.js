@@ -6,19 +6,13 @@ import { useHistory } from 'react-router-dom'
 
 function App({children}) {
 	const [token, setToken] = useLocalState('token')
+	const { Header, Footer, Content } = Layout
 	const history = useHistory()
-	
+
 	if (!token) {
 		history.push('/signin')
 	}
 
-	useEffect(() => {
-		sampleRequest((data) => {
-			console.log('data', data)
-		}, () => {})
-	}, [])
-
-	const { Header, Footer, Content } = Layout
 	return (
 		<Layout>
 			<Header>
@@ -34,4 +28,4 @@ function App({children}) {
 	);
 }
 
-export default App;
+export default App

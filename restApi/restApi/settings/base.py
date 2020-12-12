@@ -121,10 +121,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 REST_FRAMEWORK = {
-    # Use Django's standard `django.contrib.auth` permissions,
-    # or allow read-only access for unauthenticated users.
-    'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly',
+    'DEFAULT_AUTHENTICATION_CLASSES': [
         'knox.auth.TokenAuthentication',
     ]
 }
@@ -133,11 +130,11 @@ CORS_ORIGIN_WHITELIST = [
     "http://localhost:3000"
 ]
 
-REST_KNOX = {
-    'SECURE_HASH_ALGORITHM': 'cryptography.hazmat.primitives.hashes.SHA512',
-    'AUTH_TOKEN_CHARACTER_LENGTH': 64,
-    'TOKEN_TTL': timedelta(hours=10),
-    'USER_SERIALIZER': 'knox.serializers.UserSerializer',
-    'TOKEN_LIMIT_PER_USER': None,
-    'AUTO_REFRESH': True,
-}
+# REST_KNOX = {
+#     'SECURE_HASH_ALGORITHM': 'cryptography.hazmat.primitives.hashes.SHA512',
+#     'AUTH_TOKEN_CHARACTER_LENGTH': 64,
+#     'TOKEN_TTL': timedelta(hours=10),
+#     'USER_SERIALIZER': 'knox.serializers.UserSerializer',
+#     'TOKEN_LIMIT_PER_USER': None,
+#     'AUTO_REFRESH': True,
+# }

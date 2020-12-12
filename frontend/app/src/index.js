@@ -1,16 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import SampleList from './components/SampleList'
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
 import Signin from './components/auth/signin'
 import Register from './components/auth/register'
+import Dashboard from './components/Dashboard'
+import ChangePassword from './components/auth/changePassword'
 
 ReactDOM.render(
   <Router>
   	<Switch>
-  		<Route exact path="/" component={SampleList}/>
+  		<Route exact path="/" component={Dashboard}/>
+  		<Route exact path="/change-password" component={ChangePassword}/>
   		<Route exact path="/signin" component={Signin}/>
   		<Route exact path="/register" component={Register}/>
   	</Switch>

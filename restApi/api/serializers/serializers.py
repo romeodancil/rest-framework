@@ -3,7 +3,6 @@ from api.models import SampleApi
 from django.contrib.auth.models import User
 
 class SampleApiSerializers(serializers.ModelSerializer):
-
 	class Meta:
 		model = SampleApi
 		fields = ('title', 'content', 'id')
@@ -18,3 +17,9 @@ class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ('first_name', 'last_name', 'email')
+
+
+class ChangePasswordSerializer(serializers.Serializer):
+    model = User
+    old_password = serializers.CharField(required=True)
+    new_password = serializers.CharField(required=True)
