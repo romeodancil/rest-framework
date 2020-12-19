@@ -10,14 +10,13 @@ function ForgotPassword() {
 	const [error, setError] = useState('')
 
 	const onSubmit = (formProps) => {
-		console.log('formProps', formProps)
-
 		forgotPassword(formProps, (success) => {
 			setSuccess(true)
 			setError('')
 		}, (error) => {
 			const { response: { data } } = error
 			setError(data)
+			setSuccess(false)
 		})
 	}
 

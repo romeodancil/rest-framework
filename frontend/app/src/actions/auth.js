@@ -20,3 +20,7 @@ export const changePassword = (data, token, sucessCallBack, errorCallback) => {
 export const forgotPassword = (data, sucessCallBack, errorCallback) => {
 	request('POST', '/api/password_reset/', null, data, sucessCallBack, errorCallback)
 }
+
+export const confirmPassword = (data, sucessCallBack, errorCallback) => {
+	request('POST', '/api/password_reset/confirm/', null, data, sucessCallBack, errorCallback)
+}
