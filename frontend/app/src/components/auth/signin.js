@@ -44,7 +44,7 @@ function Signin() {
 								{
 									pathname: "/register",
 									state: {
-										from: "Register"
+										from: "Signin"
 									}
 								}
 						}>
@@ -53,9 +53,9 @@ function Signin() {
 					&nbsp;|&nbsp;
 					<Link to={
 								{
-									pathname: "#",
+									pathname: "/password-reset",
 									state: {
-										from: "Register"
+										from: "Signin"
 									}
 								}
 						}>

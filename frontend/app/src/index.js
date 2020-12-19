@@ -7,6 +7,7 @@ import Signin from './components/auth/signin'
 import Register from './components/auth/register'
 import Dashboard from './components/Dashboard'
 import ChangePassword from './components/auth/changePassword'
+import ForgotPassword from './components/auth/forgotPassword'
 
 ReactDOM.render(
   <Router>
@@ -15,6 +16,7 @@ ReactDOM.render(
   		<Route exact path="/change-password" component={ChangePassword}/>
   		<Route exact path="/signin" component={Signin}/>
   		<Route exact path="/register" component={Register}/>
+  		<Route exact path="/password-reset" component={ForgotPassword}/>
   	</Switch>
   </Router>,
   document.getElementById('root')

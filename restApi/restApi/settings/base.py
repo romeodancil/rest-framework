@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'django_rest_passwordreset',
     'api.apps.ApiConfig',
     'corsheaders',
     'knox',
@@ -138,3 +139,5 @@ CORS_ORIGIN_WHITELIST = [
 #     'TOKEN_LIMIT_PER_USER': None,
 #     'AUTO_REFRESH': True,
 # }
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

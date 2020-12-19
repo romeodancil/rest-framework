@@ -10,6 +10,7 @@
 
 # production
 /build
+build.zip
 
 # misc
 .DS_Store
@@ -35,7 +36,6 @@ lib64
 *.pyo
 *.pyc
 /assets
-shopper/media
 db.sqlite3
 my.cnf
 node_modules
@@ -44,4 +44,3 @@ main.css
 main.css.map
 note.txt
 media
-build.zip

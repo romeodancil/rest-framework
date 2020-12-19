@@ -16,3 +16,7 @@ export const logoutApi = (token, sucessCallBack, errorCallback) => {
 export const changePassword = (data, token, sucessCallBack, errorCallback) => {
 	request('PUT', '/api/change-password/', token, data, sucessCallBack, errorCallback)
 }
+
+export const forgotPassword = (data, sucessCallBack, errorCallback) => {
+	request('POST', '/api/password_reset/', null, data, sucessCallBack, errorCallback)
+}
