@@ -1,3 +1,4 @@
+import "antd/dist/antd.css"
 import { useState, useEffect } from 'react'
 import { Layout } from 'antd'
 import { sampleRequest } from './actions/sampleActions'

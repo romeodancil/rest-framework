@@ -6,6 +6,7 @@ import { useLocalState } from '../../hooks/hooks'
 import { Link } from 'react-router-dom'
 import AlertMessage from '../common/alertMessage'
 import { useHistory } from 'react-router-dom'
+import { Form, Button, Input } from 'antd'
 
 function Signin() {
 	const {register, handleSubmit, errors} = useForm()
@@ -25,22 +26,47 @@ function Signin() {
 
 	return (
 		<div className="App">
-			<form onSubmit={handleSubmit(onSubmit)}>
-				<label htmlFor="username">Username</label>
-				<input ref={register} type="text" name="username"/>
-				<label htmlFor="password">Password</label>
-				<input ref={register} type="password" name="password"/>
-				<button type="submit">Login</button>
-				{
+			<Form name="basic" onFinish={onSubmit}>
+				<Form.Item
+			        label="Username"
+			        name="username"
+			        rules={[
+			          {
+			            required: true,
+			            message: 'Please input your username!',
+			          },
+			        ]}
+			    >
+			    	<Input />
+      			</Form.Item>
+				<Form.Item
+			        label="Password"
+			        name="password"
+			        rules={[
+			          {
+			            required: true,
+			            message: 'Please input your password!',
+			          },
+			        ]}
+			    >
+			    	<Input.Password />
+      			</Form.Item>
+      			{
 					(error)
 					?
-						<div>
-							<AlertMessage className={""} message={error}/>
-						</div>
+						<Form.Item>
+							<div>
+								<AlertMessage title="Error" type="error" message={error}/>
+							</div>
+						</Form.Item>
 					: ''
 				}
-				<div>
-					<Link to={
+      			<Form.Item>
+			        <Button type="primary" htmlType="submit">
+			          Login
+			        </Button>
+			        &nbsp;
+			        <Link to={
 								{
 									pathname: "/register",
 									state: {
@@ -61,8 +87,8 @@ function Signin() {
 						}>
 						Forgot Password
 					</Link>
-				</div>
-			</form>
+			    </Form.Item>
+		    </Form>
 		</div>
 	)
 }
