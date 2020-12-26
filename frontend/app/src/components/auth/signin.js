@@ -5,6 +5,7 @@ import { login } from '../../actions/auth'
 import { useLocalState } from '../../hooks/hooks'
 import { Link } from 'react-router-dom'
 import AlertMessage from '../common/alertMessage'
+import CustomForm from '../common/form'
 import { useHistory } from 'react-router-dom'
 import { Form, Button, Input } from 'antd'
 
@@ -26,7 +27,7 @@ function Signin() {
 
 	return (
 		<div className="App">
-			<Form name="basic" onFinish={onSubmit}>
+			<CustomForm name="basic" onSubmit={onSubmit}>
 				<Form.Item
 			        label="Username"
 			        name="username"
@@ -88,7 +89,7 @@ function Signin() {
 						Forgot Password
 					</Link>
 			    </Form.Item>
-		    </Form>
+		    </CustomForm>
 		</div>
 	)
 }
